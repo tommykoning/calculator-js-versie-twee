@@ -56,14 +56,14 @@ function equals() {
 	for (var i = 1; i < getal2.length; i += 2) {
 		var b = getal2[i-1];
 		var d = getal2[i+1];
-		if (getal[i] == '+' ) {
-			var x = b + d;
-			getal2.splice(i-1, 3, x);
-			i -= 2 ;
-		} else if (getal2[i] == '-') {
+		if (getal2[i] == '-') {
 			var x = b - d;
 			getal2.splice(i-1, 3, x);
 			i -= 2 ;
+		} else if (getal2[i] =='+') {
+			var x = b + d;
+			getal2.splice(i-1, 3, x);
+			i -= 2
 		}
 	}
 
