@@ -7,26 +7,26 @@
 <body>
 <nav id="rekenmachine">
 <p id="getal1"></p>
-<p id="operator"></p>
 <p id="getal2"></p>
 <p id="res"></p>
-<button id="1" class="getal">1</button>
-<button id="2" class="getal">2</button>
-<button id="3" class="getal">3</button>
-<button id="4" class="getal">4</button>
-<button id="5" class="getal">5</button>
-<button id="6" class="getal">6</button>
-<button id="7" class="getal">7</button>
-<button id="8" class="getal">8</button>
-<button id="9" class="getal">9</button>
-<button id="0" class="getal">0</button>
-<button class="optie" id="point">.</button>
-<button class="optie" id="plus">+</button>
-<button class="optie" id="minus">-</button>
-<button class="optie" id="times">x</button>
-<button class="optie" id="share">/</button>
-<button class="optie" id="clear">C</button>
-<button class="optie" id="equals">=</button>
+<button id="1" class="getal" onclick="button(1)">1</button>
+<button id="2" class="getal" onclick="button(2)">2</button>
+<button id="3" class="getal" onclick="button(3)">3</button>
+<button id="4" class="getal" onclick="button(4)">4</button>
+<button id="5" class="getal" onclick="button(5)">5</button>
+<button id="6" class="getal" onclick="button(6)">6</button>
+<button id="7" class="getal" onclick="button(7)">7</button>
+<button id="8" class="getal" onclick="button(8)">8</button>
+<button id="9" class="getal" onclick="button(9)">9</button>
+<button id="0" class="getal" onclick="button(0)">0</button>
+<button class="optie" id="point" onclick="point()">.</button>
+<button class="optie" id="plus" onclick="operator('+')">+</button>
+<button class="optie" id="minus" onclick="operator('-')">-</button>
+<button class="optie" id="times" onclick="operator('*')">x</button>
+<button class="optie" id="share" onclick="operator('/')">/</button>
+<button class="optie" id="clear" onclick="clearIO()">C</button>
+<button class="optie" id="equals" onclick="equals()">=</button>
 </nav>
+<script type="text/javascript" src='calc2.js'></script>
 </body>
 </html>
