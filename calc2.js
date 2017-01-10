@@ -21,20 +21,25 @@ function operator(oper) {
 	//console.log(op);
 	document.getElementById('getal1').innerHTML = getal;
 	document.getElementById('getal2').innerHTML = getal2;
+	dec = false;
 }
 
 
 function clearIO() {
 	getal = '';
 	getal2 = [];
-	//op = [];
+	dec = false; 
 	document.getElementById('getal1').innerHTML = '0';
 	document.getElementById('getal2').innerHTML = '';
 	console.log('clear');
 }
 
 function point() {
-
+	if (dec == false) {
+		dec = true;
+		getal += '.'
+		document.getElementById('getal1').innerHTML += '.';
+	}
 }
 
 function equals() {
@@ -43,12 +48,13 @@ function equals() {
 	for (var i = 1; i < getal2.length; i += 2) {
 		var b = getal2[i-1];
 		var d = getal2[i+1];
+		var x = null;
 		if (getal2[i] == '*' ) {
-			var x = b * d;
+			x = b * d;
 			getal2.splice(i-1, 3, x);
 			i -= 2 ;	
 		} else if (getal2[i] == '/') {
-			var x = b / d;
+			x = b / d;
 			getal2.splice(i-1, 3, x);
 			i -= 2 ;
 		}
@@ -56,18 +62,25 @@ function equals() {
 	for (var i = 1; i < getal2.length; i += 2) {
 		var b = getal2[i-1];
 		var d = getal2[i+1];
-		if (getal2[i] == '-') {
-			var x = b - d;
+		var x = null;
+		if (dec == true) {
+			b = b * 100;
+			d = d * 100;
+		} if (getal2[i] == '-') {
+			x = b - d;
 			getal2.splice(i-1, 3, x);
 			i -= 2 ;
 		} else if (getal2[i] =='+') {
-			var x = b + d;
+			x = b + d;
 			getal2.splice(i-1, 3, x);
 			i -= 2
-		}
+		} 
 	}
 
 	getal3 = getal2;
+	if (dec == true) {
+		getal3 = getal3 / 100;
+	}
 	getal2 = [];
 	getal = '';
 	document.getElementById('res').innerHTML = getal3;
